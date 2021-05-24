@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress bar</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .skill{
+          background-color: deepskyblue;
+            width: 500px;
+            padding: 20px;
+        }
+        .skill li{
+            list-style: none;
+            margin: 50px 0;
+            font-weight: bolder;
+            text-transform: uppercase;
+            position: relative;
+        }
+         .skill li::before{
+             content: '';
+             position: absolute;
+             background-color: black;
+             width: 100%;
+             top: calc(100% + 5px);
+             height: 20px;
+             left: 0;
+             border-radius: 100px;
+         }
+         .skill li::after{
+             content: '';
+             position: absolute;
+             background-color: violet;
+             width: 0%;
+             top: calc(100% + 5px);
+             height: 20px;
+             left: 0;
+             border-radius: 1000px;
+             animation: 3s;
+             animation-delay: 3s;
+             animation-timing-function: linear;
+             animation-fill-mode: forwards;
+             animation-iteration-count: infinite;
+         }
+         .skill li.html::after{
+             animation-name: html;
+         }
+         @keyframes html{
+             to{
+                 width: 90%;
+             }
+         }
+
+         .skill li.css::after{
+             animation-name: css;
+         }
+         @keyframes css{
+             to{
+                 width: 85%;
+             }
+         }
+
+         .skill li.js::after{
+             animation-name: js;
+         }
+         @keyframes js{
+             to{
+                 width: 5%;
+             }
+         }
+
+         .skill li.java::after{
+             animation-name: java;
+         }
+         @keyframes java{
+             to{
+                 width: 10%;
+             }
+         }
+
+         .skill li.dt::after{
+             animation-name: dt;
+         }
+         @keyframes dt{
+             to{
+                 width: 70%;
+             }
+         }
+
+    </style>
+    
+</head>
+<body>
+    <div class="skill">
+        <ul>
+            <li class="html">html</li>
+            <li class="css">css</li>
+            <li class="js">js</li>
+            <li class="java">java</li>
+            <li class="dt">Database</li>
+
+        </ul>
+    </div>
+    
+</body>
+</html>
